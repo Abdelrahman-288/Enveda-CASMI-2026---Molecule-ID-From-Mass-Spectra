@@ -1,0 +1,77 @@
+# Enveda CASMI 2026
+# Spectrum preprocessing configuration
+#
+# Stage 3 baseline.
+# These values are experimental defaults, not permanent assumptions.
+
+baseline:
+  min_relative_intensity: 0.0
+  max_peaks: 128
+  precursor_tolerance_da: null
+  intensity_transform: sqrt
+  normalize_intensity: true
+  remove_duplicate_mz: true
+
+raw:
+  min_relative_intensity: 0.0
+  max_peaks: null
+  precursor_tolerance_da: null
+  intensity_transform: none
+  normalize_intensity: true
+  remove_duplicate_mz: true
+
+top64:
+  min_relative_intensity: 0.0
+  max_peaks: 64
+  precursor_tolerance_da: null
+  intensity_transform: sqrt
+  normalize_intensity: true
+  remove_duplicate_mz: true
+
+top128:
+  min_relative_intensity: 0.0
+  max_peaks: 128
+  precursor_tolerance_da: null
+  intensity_transform: sqrt
+  normalize_intensity: true
+  remove_duplicate_mz: true
+
+top256:
+  min_relative_intensity: 0.0
+  max_peaks: 256
+  precursor_tolerance_da: null
+  intensity_transform: sqrt
+  normalize_intensity: true
+  remove_duplicate_mz: true
+
+intensity_1pct:
+  min_relative_intensity: 0.01
+  max_peaks: null
+  precursor_tolerance_da: null
+  intensity_transform: sqrt
+  normalize_intensity: true
+  remove_duplicate_mz: true
+
+intensity_2pct:
+  min_relative_intensity: 0.02
+  max_peaks: null
+  precursor_tolerance_da: null
+  intensity_transform: sqrt
+  normalize_intensity: true
+  remove_duplicate_mz: true
+
+top128_intensity_1pct:
+  min_relative_intensity: 0.01
+  max_peaks: 128
+  precursor_tolerance_da: null
+  intensity_transform: sqrt
+  normalize_intensity: true
+  remove_duplicate_mz: true
+
+precursor_plus_2:
+  min_relative_intensity: 0.0
+  max_peaks: 128
+  precursor_tolerance_da: 2.0
+  intensity_transform: sqrt
+  normalize_intensity: true
+  remove_duplicate_mz: true
