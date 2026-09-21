@@ -1,0 +1,44 @@
+@"
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.pyd
+
+# Environment
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing / tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Kaggle competition dataset - DO NOT PUSH
+enveda-CASMI26-molecule-id-mass-spectra/
+
+# Generated data
+data/interim/
+data/processed/
+data/external/
+data/indexes/
+
+# Models
+models/checkpoints/
+models/pretrained/
+models/exported/
+
+# Outputs
+outputs/
+
+# Experiment tools
+runs/
+wandb/
+
+# OS files
+Thumbs.db
+.DS_Store
+"@ | Set-Content ".gitignore"
