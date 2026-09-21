@@ -1,0 +1,14 @@
+ENVEDA CASMI 2026 — STAGE 7 CANDIDATE CATALOG
+
+Training spectra: 2,539,608
+Unique structures: 275,810
+Invalid exact masses: 0
+Duplicate candidate keys: 0
+InChIKey14 with >1 normalized SMILES: 1,612
+InChIKey14 with >1 molecular formula: 118
+
+Exact mass min: 31.042199
+Exact mass median: 333.162331
+Exact mass max: 3399.572640
+
+Elapsed seconds: 93.21

@@ -1,0 +1,35 @@
+ENVEDA CASMI 2026 — STAGE 7 CANDIDATE GENERATION VALIDATION
+
+Rows evaluated: 50,000
+
+Tolerance: 5.0 ppm
+Survived: 46,264/50,000
+Survival rate: 92.528000%
+Zero-candidate rate: 3.764000%
+Candidate mean: 51.89
+Candidate median: 24.0
+Candidate p90: 144.0
+Candidate p99: 343.0
+Candidate max: 482
+
+Tolerance: 10.0 ppm
+Survived: 47,577/50,000
+Survival rate: 95.154000%
+Zero-candidate rate: 1.964000%
+Candidate mean: 70.62
+Candidate median: 41.0
+Candidate p90: 180.0
+Candidate p99: 377.0
+Candidate max: 501
+
+Tolerance: 20.0 ppm
+Survived: 48,694/50,000
+Survival rate: 97.388000%
+Zero-candidate rate: 1.024000%
+Candidate mean: 104.07
+Candidate median: 71.0
+Candidate p90: 259.0
+Candidate p99: 418.0
+Candidate max: 693
+
+Elapsed seconds: 112.10

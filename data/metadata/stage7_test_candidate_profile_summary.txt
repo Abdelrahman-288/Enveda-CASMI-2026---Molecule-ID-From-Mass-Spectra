@@ -1,0 +1,31 @@
+ENVEDA CASMI 2026 — STAGE 7 TEST CANDIDATE PROFILE
+
+Test spectra: 1,213
+Test molecules: 400
+Hard-filter spectra: 1,213
+Unsupported-adduct spectra: 0
+Untrusted-adduct spectra: 0
+Zero-candidate spectra: 0
+
+Per-spectrum candidates:
+Median: 82.0
+Mean: 118.38
+P90: 291.0
+P99: 474.0
+Max: 485
+
+Per-molecule union:
+Median: 80.0
+Mean: 113.38
+P90: 265.0
+Max: 485
+
+Per-molecule intersection:
+Median: 77.5
+Mean: 110.97
+P90: 252.0
+P99: 474.0
+Max: 484
+
+Empty intersections: 0
+Empty unions: 0

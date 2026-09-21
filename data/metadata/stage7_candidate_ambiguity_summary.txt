@@ -1,0 +1,16 @@
+ENVEDA CASMI 2026 — STAGE 7 CANDIDATE AMBIGUITY AUDIT
+
+Training rows: 2,539,608
+Keys with >1 normalized SMILES: 1,612
+Keys with >1 molecular formula: 118
+Total ambiguous keys: 1,612
+
+Formula conflicts: 118
+Exact-mass conflicts: 193
+Same exact mass despite ambiguity: 1,473
+Canonical-SMILES collapses: 0
+
+Median conflicting mass range (Da): 1.00727645
+Maximum conflicting mass range (Da): 8.05021397
+
+Elapsed seconds: 3.73

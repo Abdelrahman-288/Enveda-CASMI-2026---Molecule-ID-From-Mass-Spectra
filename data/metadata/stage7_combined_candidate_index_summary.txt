@@ -1,0 +1,35 @@
+ENVEDA CASMI 2026 — STAGE 7 COMBINED CANDIDATE INDEX
+
+STRUCTURE COUNTS
+Enveda unique structures: 275,810
+COCONUT unique structures: 479,726
+Shared structures: 26,140
+Enveda-only structures: 249,670
+COCONUT-only structures: 453,586
+Combined unique structures: 729,396
+
+OVERLAP
+Enveda covered by COCONUT: 9.4775%
+COCONUT overlapping Enveda: 5.4489%
+
+VARIANTS
+Combined mass variants: 731,675
+Duplicate source variants removed: 26,226
+Structures with >1 mass variant: 2,264
+Maximum variants per structure: 4
+
+STRUCTURE PROVENANCE
+Enveda only: 249,670
+COCONUT only: 453,586
+Both sources: 26,140
+
+VALIDATION
+Self retrieval: 10,000/10,000
+Self retrieval rate: 100.000000%
+
+OUTPUT FILES
+Parquet MB: 23.22
+CSV MB: 95.37
+NPZ MB: 19.49
+
+Elapsed seconds: 114.18

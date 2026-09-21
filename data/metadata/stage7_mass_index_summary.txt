@@ -1,0 +1,21 @@
+ENVEDA CASMI 2026 — STAGE 7 VARIANT-AWARE MASS INDEX
+
+Training spectra: 2,539,608
+Unique candidate representations before mass dedup: 277,566
+Same-key duplicate masses removed: 1,563
+Unique structures indexed: 275,810
+Mass variants indexed: 276,003
+Structures with >1 mass variant: 193
+Maximum variants per structure: 2
+
+Self retrieval: 10,000/10,000
+Self retrieval rate: 100.000000%
+
+10 ppm example candidate counts:
+250.00 Da: 1
+300.00 Da: 2
+350.00 Da: 0
+400.00 Da: 3
+450.00 Da: 1
+
+Elapsed seconds: 103.48

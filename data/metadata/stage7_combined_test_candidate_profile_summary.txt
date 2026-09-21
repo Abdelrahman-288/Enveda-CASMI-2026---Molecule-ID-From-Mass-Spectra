@@ -1,0 +1,29 @@
+ENVEDA CASMI 2026 — STAGE 7 COMBINED TEST CANDIDATE PROFILE
+
+Enveda structures: 275,810
+Combined structures: 729,396
+
+ENVEDA INTERSECTION
+Median: 77.50
+Mean: 110.97
+P90: 252.00
+P99: 474.00
+Max: 484
+
+COMBINED INTERSECTION
+Median: 107.00
+Mean: 142.48
+P90: 333.00
+P99: 527.00
+Max: 604
+
+COCONUT ADDITIONS
+Median: 19.00
+Mean: 31.51
+P90: 66.10
+P99: 180.03
+Max: 548
+
+Median growth factor: 1.2153x
+Mean growth factor: 1.4877x
+Maximum growth factor: 10.7857x

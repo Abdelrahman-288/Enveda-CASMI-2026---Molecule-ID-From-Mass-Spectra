@@ -1,0 +1,23 @@
+ENVEDA CASMI 2026 — STAGE 7 COCONUT INGESTION
+
+Input SDF: coconut_sdf_2d_lite-09-2026.sdf
+Input size GB: 2.173
+
+SDF records processed: 738,823
+Valid RDKit molecules: 738,823
+Invalid molecules: 0
+Valid rate: 100.000000%
+
+Unique inchikey14 structures: 479,726
+Unique mass variants: 481,898
+Duplicate variants removed: 256,925
+Duplicate variant rate: 34.774905%
+
+Multi-fragment molecules: 4,247
+Multi-fragment rate: 0.574833%
+Charged molecules: 10,757
+Charged molecule rate: 1.455964%
+
+Output parquet MB: 31.55
+Elapsed seconds: 1229.19
+Throughput mol/s: 601.07
