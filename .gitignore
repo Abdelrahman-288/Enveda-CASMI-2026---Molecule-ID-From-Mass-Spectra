@@ -44,3 +44,6 @@ Thumbs.db
 "@ | Set-Content ".gitignore"
 # Generated validation metadata
 data/metadata/*.csv
+
+# Stage 6 trained model checkpoints
+models/stage6/*.pt

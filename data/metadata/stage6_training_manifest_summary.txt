@@ -1,0 +1,50 @@
+ENVEDA CASMI 2026
+Stage 6 Neural Training Manifest
+
+Random seed:
+42
+
+Maximum training spectra per structure:
+12
+
+Maximum validation spectra per structure:
+6
+
+Training structures:
+248,325
+
+Training spectra:
+1,589,761
+
+Training test-like spectra:
+737,264
+
+Validation structures:
+27,485
+
+Validation spectra:
+129,408
+
+Validation test-like spectra:
+76,391
+
+Structure overlap:
+0
+
+Mean training spectra per structure:
+6.4019
+
+Median training spectra per structure:
+6.0000
+
+Maximum training spectra per structure:
+12
+
+Mean validation spectra per structure:
+4.7083
+
+Median validation spectra per structure:
+6.0000
+
+Maximum validation spectra per structure:
+6
