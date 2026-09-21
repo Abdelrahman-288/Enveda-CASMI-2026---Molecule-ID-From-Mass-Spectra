@@ -1,0 +1,37 @@
+# Enveda CASMI 2026
+# Chemistry and candidate-filtering configuration
+
+mass_filter:
+  default_tolerance_ppm: 10.0
+
+  # Adducts that behaved extremely well during validation.
+  hard_filter_adducts:
+    - "[M+H]+"
+    - "[M-H]-"
+    - "[M+CH2O2-H]-"
+    - "[M+Cl]-"
+    - "[2M+H]+"
+    - "[2M+Na]+"
+    - "[2M-H]-"
+
+  # These adducts are chemically valid but contained a noticeable
+  # minority of mislabeled/noisy training rows.
+  #
+  # Use the mass error as a strong feature, but allow fallback if
+  # hard filtering would remove all plausible candidates.
+  soft_fallback_adducts:
+    - "[M+Na]+"
+    - "[M+K]+"
+    - "[M+NH4]+"
+
+  # Known unreliable annotation pattern in the training data.
+  disabled_hard_filter_adducts:
+    - "[M+2H]2+"
+
+formula:
+  use_formula_constraint: true
+  require_exact_formula_match_when_formula_known: true
+
+fallback:
+  enabled: true
+  keep_best_mass_candidates_if_empty: 25
