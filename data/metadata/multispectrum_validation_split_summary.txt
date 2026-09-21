@@ -1,0 +1,29 @@
+ENVEDA CASMI 2026
+Stage 5 Multi-Spectrum Validation Split
+
+Eligible structures:
+170,274
+
+Query molecules:
+170,274
+
+Query spectra:
+481,575
+
+Reference spectra:
+694,481
+
+Minimum query spectra per molecule:
+2
+
+Maximum query spectra per molecule:
+3
+
+Mean query spectra per molecule:
+2.8282
+
+Query/reference row overlap:
+0
+
+Query molecules missing reference:
+0

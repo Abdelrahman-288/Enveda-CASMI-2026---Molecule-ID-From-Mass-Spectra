@@ -1,0 +1,32 @@
+ENVEDA CASMI 2026
+Stage 5 Library-Match Validation
+
+Seed:
+casmi2026_library_match_v1
+
+Total spectra:
+2,539,608
+
+Eligible structures:
+258,777
+
+Query spectra:
+258,777
+
+Reference spectra:
+2,263,798
+
+Unused singleton spectra:
+17,033
+
+Query structures:
+258,777
+
+Queries with test-like spectra:
+178,277
+
+Structures with test-like query available:
+178,277
+
+Queries missing same-structure reference:
+0

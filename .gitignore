@@ -42,3 +42,5 @@ wandb/
 Thumbs.db
 .DS_Store
 "@ | Set-Content ".gitignore"
+# Generated validation metadata
+data/metadata/*.csv

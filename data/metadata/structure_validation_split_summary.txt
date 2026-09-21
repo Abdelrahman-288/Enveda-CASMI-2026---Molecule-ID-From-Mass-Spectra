@@ -1,0 +1,35 @@
+ENVEDA CASMI 2026
+Stage 5 Structure-Disjoint Validation Split
+
+Seed:
+casmi2026_stage5_v1
+
+Validation fraction:
+0.1
+
+Total structures:
+275,810
+
+Train structures:
+248,325
+
+Validation structures:
+27,485
+
+Train spectra:
+2,290,808
+
+Validation spectra:
+248,800
+
+Structure overlap:
+0
+
+Validation structures with timsTOF:
+18,354
+
+Validation structures with test-like spectra:
+17,983
+
+Validation test-like spectra:
+81,923
