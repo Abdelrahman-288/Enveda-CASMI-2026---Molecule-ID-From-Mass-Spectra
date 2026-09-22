@@ -1,0 +1,32 @@
+ENVEDA CASMI 2026 — STAGE 9 TEST-LIKE SUBSAMPLING
+
+Repeats: 5
+Seeds: [42, 43, 44, 45, 46]
+Aggregation: mean
+
+UNION + MEAN
+coverage: mean=1.00000000, std=0.00000000, min=1.00000000, max=1.00000000
+recall_1: mean=0.17096598, std=0.00209485, min=0.16801134, max=0.17297209
+recall_5: mean=0.44912778, std=0.00228288, min=0.44614043, max=0.45230048
+recall_10: mean=0.60066507, std=0.00204793, min=0.59845181, max=0.60275840
+recall_25: mean=0.79385085, std=0.00262363, min=0.79006760, max=0.79644570
+mrr: mean=0.30645981, std=0.00145864, min=0.30408503, max=0.30776518
+Requested mean spectra/group: 3.035630
+Actual mean spectra/group: 2.831662
+
+INTERSECTION + MEAN
+coverage: mean=1.00000000, std=0.00000000, min=1.00000000, max=1.00000000
+recall_1: mean=0.17692979, std=0.00234143, min=0.17373528, max=0.17956825
+recall_5: mean=0.45894025, std=0.00241908, min=0.45557130, max=0.46189490
+recall_10: mean=0.61077191, std=0.00214482, min=0.60782817, max=0.61278892
+recall_25: mean=0.80154819, std=0.00245451, min=0.79786306, max=0.80364152
+mrr: mean=0.31374102, std=0.00151958, min=0.31142092, max=0.31544977
+Requested mean spectra/group: 3.035630
+Actual mean spectra/group: 2.831662
+
+Union mean MRR: 0.30645981
+Intersection mean MRR: 0.31374102
+Intersection - Union: +0.00728122
+Winner: intersection
+
+Total elapsed seconds: 344.50

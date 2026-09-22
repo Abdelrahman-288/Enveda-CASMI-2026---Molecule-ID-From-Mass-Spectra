@@ -1,0 +1,20 @@
+ENVEDA CASMI 2026 — STAGE 9.5 HYBRID STRATEGY
+
+UNION: MRR=0.30645981 +/- 0.00145864
+INTERSECTION: MRR=0.31374102 +/- 0.00151958
+threshold=1, intersection_usage=1.00000000, mrr=0.31374102, std=0.00151958, recall1=0.17692979, recall25=0.80154819
+threshold=2, intersection_usage=0.99765591, mrr=0.31373148, std=0.00151522, recall1=0.17691888, recall25=0.80154819
+threshold=5, intersection_usage=0.98644788, mrr=0.31344641, std=0.00148640, recall1=0.17653729, recall25=0.80154819
+threshold=10, intersection_usage=0.95906018, mrr=0.31284877, std=0.00148483, recall1=0.17600305, recall25=0.80143916
+threshold=20, intersection_usage=0.88738552, mrr=0.31173414, std=0.00150952, recall1=0.17496729, recall25=0.80113389
+threshold=30, intersection_usage=0.81306149, mrr=0.31066731, std=0.00156116, recall1=0.17396424, recall25=0.80044701
+threshold=50, intersection_usage=0.66844745, mrr=0.30917696, std=0.00149281, recall1=0.17281945, recall25=0.79882250
+threshold=75, intersection_usage=0.51740078, mrr=0.30809396, std=0.00148570, recall1=0.17207806, recall25=0.79699084
+threshold=100, intersection_usage=0.40247492, mrr=0.30743508, std=0.00148108, recall1=0.17162015, recall25=0.79587876
+
+Best threshold: 1
+Best mean MRR: 0.31374102
+Best MRR std: 0.00151958
+Intersection usage: 1.00000000
+Recall@1: 0.17692979
+Recall@25: 0.80154819

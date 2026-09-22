@@ -1,0 +1,94 @@
+Candidate mode: union
+mean:
+  groups=18344
+  coverage=1.00000000
+  recall@1=0.19346925
+  recall@5=0.49176843
+  recall@10=0.64282599
+  recall@25=0.82370257
+  mrr=0.33615773
+max:
+  groups=18344
+  coverage=1.00000000
+  recall@1=0.14636939
+  recall@5=0.40694505
+  recall@10=0.56247274
+  recall@25=0.77011557
+  mrr=0.27654348
+top2_mean:
+  groups=18344
+  coverage=1.00000000
+  recall@1=0.16337767
+  recall@5=0.43638247
+  recall@10=0.59349106
+  recall@25=0.79034017
+  mrr=0.29784249
+logsumexp:
+  groups=18344
+  coverage=1.00000000
+  recall@1=0.17820541
+  recall@5=0.46870911
+  recall@10=0.62287396
+  recall@25=0.81018317
+  mrr=0.31760482
+
+Candidate mode: intersection
+mean:
+  groups=18344
+  coverage=1.00000000
+  recall@1=0.20349978
+  recall@5=0.50648713
+  recall@10=0.65819887
+  recall@25=0.83416921
+  mrr=0.34749120
+max:
+  groups=18344
+  coverage=1.00000000
+  recall@1=0.15329263
+  recall@5=0.42242695
+  recall@10=0.58127998
+  recall@25=0.78532490
+  mrr=0.28682846
+top2_mean:
+  groups=18344
+  coverage=1.00000000
+  recall@1=0.17122765
+  recall@5=0.45262756
+  recall@10=0.61017226
+  recall@25=0.80402311
+  mrr=0.30858310
+logsumexp:
+  groups=18344
+  coverage=1.00000000
+  recall@1=0.18654601
+  recall@5=0.48430004
+  recall@10=0.63830135
+  recall@25=0.82255778
+  mrr=0.32816032
+
+Best union aggregation: mean
+Best union MRR: 0.33615773
+
+1 adduct(s):
+  groups=7358
+  recall@1=0.20372384
+  recall@25=0.82413699
+  mrr=0.34590572
+2 adduct(s):
+  groups=9211
+  recall@1=0.18619042
+  recall@25=0.82868310
+  mrr=0.33074447
+3 adduct(s):
+  groups=1728
+  recall@1=0.19039352
+  recall@25=0.79861111
+  mrr=0.32616941
+4 adduct(s):
+  groups=47
+  recall@1=0.12765957
+  recall@25=0.70212766
+  mrr=0.23819301
+
+Evaluation elapsed seconds: 89.07
+Total elapsed seconds: 165.42
