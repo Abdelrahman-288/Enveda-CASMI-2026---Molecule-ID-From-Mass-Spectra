@@ -1,49 +1,53 @@
-@"
-# Python
-.venv/
-__pycache__/
-*.py[cod]
-*.pyd
-
-# Environment
-.env
-.env.*
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Testing / tooling
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-
-# Kaggle competition dataset - DO NOT PUSH
-enveda-CASMI26-molecule-id-mass-spectra/
-
-# Generated data
-data/interim/
-data/processed/
-data/external/
-data/indexes/
-
-# Models
-models/checkpoints/
-models/pretrained/
-models/exported/
-
-# Outputs
-outputs/
-
-# Experiment tools
-runs/
-wandb/
-
-# OS files
-Thumbs.db
-.DS_Store
-"@ | Set-Content ".gitignore"
-# Generated validation metadata
-data/metadata/*.csv
-
-# Stage 6 trained model checkpoints
-models/stage6/*.pt
+@(
+"# Python"
+".venv/"
+"__pycache__/"
+"*.py[cod]"
+"*.pyd"
+""
+"# Environment"
+".env"
+".env.*"
+""
+"# Jupyter"
+".ipynb_checkpoints/"
+""
+"# Testing / tooling"
+".pytest_cache/"
+".mypy_cache/"
+".ruff_cache/"
+""
+"# Kaggle competition dataset - DO NOT PUSH"
+"enveda-CASMI26-molecule-id-mass-spectra/"
+""
+"# Generated data"
+"data/interim/"
+"data/processed/"
+"data/external/"
+"data/indexes/"
+""
+"# Generated validation metadata"
+"data/metadata/*.csv"
+""
+"# Models"
+"models/checkpoints/"
+"models/pretrained/"
+"models/exported/"
+""
+"# Stage 6 trained model checkpoints"
+"models/stage6/*.pt"
+""
+"# Stage 8 trained model checkpoints"
+"models/stage8/*.pt"
+""
+"# Outputs"
+"outputs/"
+""
+"# Experiment tools"
+"runs/"
+"wandb/"
+""
+"# OS files"
+"Thumbs.db"
+".DS_Store"
+) | Set-Content .gitignore

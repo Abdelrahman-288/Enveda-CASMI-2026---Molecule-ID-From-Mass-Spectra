@@ -1,0 +1,20 @@
+ENVEDA CASMI 2026 — STAGE 8 SPECTRUM-MOLECULE ALIGNMENT
+
+Structures: 275,810
+Spectra: 1,719,169
+
+Same-position structures: 1
+Reordered structures: 275,809
+
+Train spectra: 1,589,761
+Validation spectra: 129,408
+Train molecules: 248,325
+Validation molecules: 27,485
+Structure split overlap: 0
+
+Verified alignments: 10,000/10,000
+Verification rate: 100.000000%
+
+Structure mapping size MB: 1.05
+Spectrum mapping size MB: 6.56
+Elapsed seconds: 4.31

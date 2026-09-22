@@ -1,0 +1,17 @@
+ENVEDA CASMI 2026 — STAGE 8 MOLECULAR FINGERPRINT CACHE
+
+Unique structures: 275,810
+Invalid structures: 0
+Fingerprint type: Morgan
+Radius: 2
+Fingerprint size: 2048
+Array dtype: uint8
+
+Minimum active bits: 3
+Median active bits: 46.0
+Mean active bits: 46.03
+Maximum active bits: 203
+Zero fingerprints: 0
+
+Cache size MB: 538.69
+Elapsed seconds: 115.09

@@ -1,0 +1,22 @@
+ENVEDA CASMI 2026 — STAGE 8 FULL FROZEN CROSS-MODAL TRAINING
+
+GPU: NVIDIA GeForce RTX 4070 Laptop GPU
+Epochs: 3
+Batch size: 512
+Total steps: 9,315
+Training spectra: 1,589,761
+Validation spectra: 129,408
+
+Initial validation loss: 5.145503
+Initial S->M Top-1: 0.009010
+Initial M->S Top-1: 0.009721
+
+Best epoch: 3
+Best validation loss: 2.856463
+Best validation S->M Top-1: 0.220852
+Best validation M->S Top-1: 0.303443
+
+Total elapsed seconds: 553.31
+
+Best checkpoint: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\models\stage8\cross_modal_frozen_best.pt
+Latest checkpoint: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\models\stage8\cross_modal_frozen_latest.pt

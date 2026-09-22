@@ -1,0 +1,55 @@
+ENVEDA CASMI 2026 — STAGE 8 CANDIDATE-AWARE CHEMISTRY-CONSTRAINED RETRIEVAL
+
+Checkpoint: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\models\stage8\candidate_aware_best.pt
+
+Validation spectra: 129,408
+Supported adduct: 127,666
+Trusted adduct: 127,555
+Hard-filter eligible: 114,020
+Hard-filter rate: 0.88108927
+True structure survived: 114,020
+Survival rate: 1.00000000
+Zero-candidate rows: 0
+Zero-candidate rate: 0.00000000
+
+Candidate counts:
+min: 1.0
+median: 71.0
+mean: 97.12002280301701
+p90: 215.0
+p95: 291.0
+p99: 390.0
+max: 501.0
+
+All surviving hard-filter rows:
+count: 114020
+recall@1: 0.14646553
+recall@5: 0.40447290
+recall@10: 0.55387651
+recall@25: 0.75648132
+mrr: 0.27519512
+median_rank: 8.0000
+mean_rank: 21.6709
+
+timsTOF surviving rows:
+count: 88709
+recall@1: 0.12141947
+recall@5: 0.35817110
+recall@10: 0.50833625
+recall@25: 0.72317352
+mrr: 0.24320174
+median_rank: 10.0000
+mean_rank: 24.1422
+
+High-confidence surviving rows:
+count: 114020
+recall@1: 0.14646553
+recall@5: 0.40447290
+recall@10: 0.55387651
+recall@25: 0.75648132
+mrr: 0.27519512
+median_rank: 8.0000
+mean_rank: 21.6709
+
+Ranking elapsed seconds: 155.03
+Total elapsed seconds: 177.00

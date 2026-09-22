@@ -1,0 +1,17 @@
+ENVEDA CASMI 2026 — STAGE 8 GLOBAL RETRIEVAL
+
+Validation spectra: 129,408
+Validation candidate molecules: 27,485
+
+Recall@1: 0.00660701
+Recall@5: 0.02677578
+Recall@10: 0.04719183
+Recall@25: 0.09130038
+MRR: 0.02285084
+
+Median rank: 512.00
+Mean rank: 1594.11
+P90 rank: 4436.00
+P95 rank: 6995.00
+
+Elapsed seconds: 11.30

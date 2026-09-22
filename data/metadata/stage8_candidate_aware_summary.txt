@@ -1,0 +1,24 @@
+ENVEDA CASMI 2026 — STAGE 8 CANDIDATE-AWARE TRAINING
+
+Smoke mode: False
+Epochs: 2
+Total steps: 6000
+Target batch size: 32
+Tolerance ppm: 10.0
+
+Train eligible spectra: 1374930
+Validation eligible spectra: 114020
+
+Initial validation loss: 2.37802820
+Initial validation S->M Top-1: 0.28829946
+Initial validation M->S Top-1: 0.30317303
+
+Best epoch: 2
+Best validation loss: 2.25160206
+Best validation S->M Top-1: 0.31333664
+Best validation M->S Top-1: 0.31755082
+
+Elapsed seconds: 223.06
+
+Best checkpoint: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\models\stage8\candidate_aware_best.pt
+Latest checkpoint: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\models\stage8\candidate_aware_latest.pt
