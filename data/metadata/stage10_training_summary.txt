@@ -1,0 +1,77 @@
+ENVEDA CASMI 2026 - STAGE 10 LEARNED CANDIDATE RERANKING
+==============================================================================
+
+Dataset rows: 1,878,019
+Total queries: 18,344
+Train queries: 14,675
+Validation queries: 3,669
+Train molecules: 14,675
+Validation molecules: 3,669
+Molecule overlap: 0
+
+Feature count: 11
+Experiments: 4
+
+Best experiment: pairwise_depth6
+Best iteration: 731
+Best internal NDCG@25: 0.5330499520310344
+
+Stage 9 validation baseline:
+  mrr: 0.345827
+  mrr@5: 0.310789
+  mrr@10: 0.331250
+  mrr@25: 0.342206
+  hits@1: 0.203053
+  hits@5: 0.504497
+  hits@10: 0.659035
+  hits@25: 0.831834
+  mean_true_rank: 15.811393
+  median_true_rank: 5.000000
+
+Stage 10 best model:
+  mrr: 0.432286
+  mrr@5: 0.402112
+  mrr@10: 0.420670
+  mrr@25: 0.429876
+  hits@1: 0.280730
+  hits@5: 0.608340
+  hits@10: 0.744890
+  hits@25: 0.887163
+  mean_true_rank: 11.925593
+  median_true_rank: 4.000000
+
+Improvement over Stage 9:
+  MRR: +0.086459
+  MRR@5: +0.091324
+  MRR@10: +0.089420
+  MRR@25: +0.087670
+  Hits@1: +0.077678
+  Hits@5: +0.103843
+  Hits@10: +0.085854
+  Hits@25: +0.055328
+
+Model features:
+  - mean_score
+  - max_score
+  - top2_mean_score
+  - mass_error_ppm
+  - abs_mass_error_ppm
+  - num_supporting_spectra
+  - retrieval_rank
+  - similarity_rank
+  - neural_rank
+  - score_std
+  - score_range
+
+Feature importance:
+  retrieval_rank: 0.46599144
+  abs_mass_error_ppm: 0.13359334
+  mean_score: 0.13342598
+  mass_error_ppm: 0.09787162
+  neural_rank: 0.04055336
+  top2_mean_score: 0.03547720
+  num_supporting_spectra: 0.02673460
+  similarity_rank: 0.01758268
+  score_range: 0.01658681
+  score_std: 0.01615293
+  max_score: 0.01603012
