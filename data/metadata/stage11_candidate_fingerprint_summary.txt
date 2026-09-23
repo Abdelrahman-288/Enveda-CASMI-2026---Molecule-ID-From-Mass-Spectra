@@ -1,0 +1,20 @@
+ENVEDA CASMI 2026 - STAGE 11.2 CANDIDATE FINGERPRINT CACHE
+
+Candidate structures: 46,858
+Morgan radius: 2
+Fingerprint bits: 2,048
+Fingerprint dtype: uint8
+Fingerprint shape: (46858, 2048)
+Invalid SMILES: 0
+Zero fingerprints: 0
+
+Active bits minimum: 12
+Active bits median: 47.00
+Active bits mean: 46.09
+Active bits P95: 54.00
+Active bits maximum: 66
+
+Fingerprint cache size: 91.52 MB
+
+Fingerprint cache: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\data\processed\stage11\test_candidate_morgan_fingerprints.npy
+Fingerprint map: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\data\processed\stage11\test_candidate_fingerprint_map.parquet

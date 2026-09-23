@@ -1,0 +1,35 @@
+ENVEDA CASMI 2026 - STAGE 10 RERANKER DATASET SUMMARY
+========================================================================
+
+Stage 8 split: train (split_value=0)
+Output: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\data\metadata\stage10_reranker_train_dataset.csv
+
+Groups considered: 60,000
+Groups saved: 60,000
+Groups missing true structure: 0
+Groups true candidate absent from pool: 0
+Groups with empty pool: 0
+
+Candidate rows: 6,128,353
+Queries: 60,000
+Positive rows: 60,000
+Unique candidate structures: 227,276
+
+Mean candidates/query: 102.14
+Median candidates/query: 76.0
+Min candidates/query: 1
+Max candidates/query: 501
+
+Invalid positive-count queries: 0
+
+Candidate modes:
+  intersection: 60,000
+
+Baseline Stage 9 mean-score metrics on retained queries:
+  Recall@1:  43.868%
+  Recall@5:  79.298%
+  Recall@10: 89.007%
+  Recall@25: 96.372%
+  MRR:       0.593513
+
+Elapsed: 13244.38s (220.74 min)

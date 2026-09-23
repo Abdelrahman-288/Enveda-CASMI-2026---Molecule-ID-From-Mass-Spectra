@@ -126,18 +126,32 @@ STAGE6_ROW_INDICES_PATH = (
     / "row_indices.npy"
 )
 
-OUTPUT_DATASET = (
+OUTPUT_TRAIN_DATASET = (
     PROJECT_ROOT
     / "data"
     / "metadata"
-    / "stage10_reranker_dataset.csv"
+    / "stage10_reranker_train_dataset.csv"
 )
 
-OUTPUT_SUMMARY = (
+OUTPUT_TRAIN_SUMMARY = (
     PROJECT_ROOT
     / "data"
     / "metadata"
-    / "stage10_reranker_dataset_summary.txt"
+    / "stage10_reranker_train_dataset_summary.txt"
+)
+
+OUTPUT_VALIDATION_DATASET = (
+    PROJECT_ROOT
+    / "data"
+    / "metadata"
+    / "stage10_reranker_validation_dataset.csv"
+)
+
+OUTPUT_VALIDATION_SUMMARY = (
+    PROJECT_ROOT
+    / "data"
+    / "metadata"
+    / "stage10_reranker_validation_dataset_summary.txt"
 )
 
 
@@ -164,6 +178,20 @@ def parse_args():
     )
 
     parser.add_argument(
+        "--split",
+        choices=(
+            "train",
+            "validation",
+        ),
+        required=True,
+        help=(
+            "Stage 8 split to process. "
+            "'train' uses split_value=0 and "
+            "'validation' uses split_value=1."
+        ),
+    )
+
+    parser.add_argument(
         "--max-groups",
         type=int,
         default=None,
@@ -176,27 +204,55 @@ def parse_args():
     parser.add_argument(
         "--output",
         type=Path,
-        default=OUTPUT_DATASET,
-        help="Output candidate-level CSV path.",
+        default=None,
+        help=(
+            "Output candidate-level CSV path. "
+            "If omitted, a split-specific default is used."
+        ),
     )
 
     parser.add_argument(
         "--summary",
         type=Path,
-        default=OUTPUT_SUMMARY,
-        help="Output summary text path.",
+        default=None,
+        help=(
+            "Output summary text path. "
+            "If omitted, a split-specific default is used."
+        ),
     )
 
     parser.add_argument(
         "--all-instruments",
         action="store_true",
         help=(
-            "Use all validation instruments instead "
-            "of only the Stage 9 timsTOF domain."
+            "Use all instruments instead of only "
+            "the Stage 9 timsTOF domain."
         ),
     )
 
     return parser.parse_args()
+
+
+def resolve_output_paths(
+    split_name,
+    output,
+    summary,
+):
+    if split_name == "train":
+        default_output = OUTPUT_TRAIN_DATASET
+        default_summary = OUTPUT_TRAIN_SUMMARY
+    elif split_name == "validation":
+        default_output = OUTPUT_VALIDATION_DATASET
+        default_summary = OUTPUT_VALIDATION_SUMMARY
+    else:
+        raise ValueError(
+            f"Unsupported split: {split_name}"
+        )
+
+    return (
+        output if output is not None else default_output,
+        summary if summary is not None else default_summary,
+    )
 
 
 # ============================================================
@@ -460,39 +516,89 @@ def tensor_to_numpy(
 def build_exact_mass_lookup(
     variants,
 ):
-    grouped = (
-        variants
-        .groupby(
-            "inchikey14",
-            sort=False,
-        )["exact_mass"]
-        .median()
-    )
+    """
+    Map each InChIKey14 to all finite exact-mass variants.
 
-    return {
-        str(key): float(value)
-        for key, value
-        in grouped.items()
-        if np.isfinite(value)
-    }
+    Keeping every valid variant avoids artificial ppm errors
+    caused by collapsing multiple masses to their median.
+    """
+
+    lookup = {}
+
+    for (
+        inchikey14,
+        group,
+    ) in variants.groupby(
+        "inchikey14",
+        sort=False,
+    ):
+        masses = (
+            pd.to_numeric(
+                group["exact_mass"],
+                errors="coerce",
+            )
+            .to_numpy(
+                dtype=np.float64
+            )
+        )
+
+        masses = masses[
+            np.isfinite(masses)
+            & (masses > 0)
+        ]
+
+        if len(masses) == 0:
+            continue
+
+        lookup[
+            str(inchikey14)
+        ] = np.unique(
+            masses
+        )
+
+    return lookup
 
 
 def calculate_candidate_mass_error(
     *,
     candidate_position,
-    candidate_exact_mass,
+    candidate_exact_masses,
     group_df,
     availability_numpy,
 ):
     """
-    Mean signed ppm error across spectra where this
-    candidate is available.
+    Mean signed ppm error across spectra where this candidate
+    is available.
+
+    For each spectrum, choose the candidate exact-mass variant
+    with the smallest absolute ppm error.
 
     Uses only test-time-safe information:
-    candidate exact mass + precursor m/z + adduct.
+    candidate exact masses + precursor m/z + adduct.
     """
 
-    if candidate_exact_mass is None:
+    if candidate_exact_masses is None:
+        return 0.0
+
+    candidate_exact_masses = np.asarray(
+        candidate_exact_masses,
+        dtype=np.float64,
+    )
+
+    candidate_exact_masses = (
+        candidate_exact_masses[
+            np.isfinite(
+                candidate_exact_masses
+            )
+            & (
+                candidate_exact_masses > 0
+            )
+        ]
+    )
+
+    if len(
+        candidate_exact_masses
+    ) == 0:
         return 0.0
 
     ppm_values = []
@@ -542,15 +648,6 @@ def calculate_candidate_mass_error(
                 )
             )
 
-            ppm = mass_error_ppm(
-                observed_mass=(
-                    observed_neutral_mass
-                ),
-                expected_mass=(
-                    candidate_exact_mass
-                ),
-            )
-
         except (
             ValueError,
             KeyError,
@@ -558,12 +655,44 @@ def calculate_candidate_mass_error(
         ):
             continue
 
-        if np.isfinite(
-            ppm
+        variant_ppm_values = []
+
+        for exact_mass in (
+            candidate_exact_masses
         ):
-            ppm_values.append(
-                float(ppm)
+            try:
+                ppm = mass_error_ppm(
+                    observed_mass=(
+                        observed_neutral_mass
+                    ),
+                    expected_mass=float(
+                        exact_mass
+                    ),
+                )
+
+            except (
+                ValueError,
+                KeyError,
+                ZeroDivisionError,
+            ):
+                continue
+
+            if np.isfinite(
+                ppm
+            ):
+                variant_ppm_values.append(
+                    float(ppm)
+                )
+
+        if not variant_ppm_values:
+            continue
+
+        ppm_values.append(
+            min(
+                variant_ppm_values,
+                key=abs,
             )
+        )
 
     if not ppm_values:
         return 0.0
@@ -677,14 +806,16 @@ def validate_required_files():
 
 
 # ============================================================
-# Validation metadata
+# Split metadata
 # ============================================================
 
-def load_validation_metadata(
+def load_split_metadata(
     dataset,
+    *,
+    split_name,
 ):
     print(
-        "\nLoading validation metadata..."
+        f"\\nLoading {split_name} metadata..."
     )
 
     train_metadata = (
@@ -726,7 +857,7 @@ def load_validation_metadata(
     )
 
     metadata[
-        "validation_index"
+        "split_index"
     ] = np.arange(
         len(metadata),
         dtype=np.int64,
@@ -806,8 +937,8 @@ def generate_candidate_sets(
         ),
         start=1,
     ):
-        validation_index = int(
-            row.validation_index
+        split_index = int(
+            row.split_index
         )
 
         adduct = (
@@ -924,11 +1055,11 @@ def generate_candidate_sets(
         )
 
         spectrum_candidate_sets[
-            validation_index
+            split_index
         ] = candidate_indices
 
         eligible_indices.append(
-            validation_index
+            split_index
         )
 
         true_structure_index = (
@@ -1011,6 +1142,27 @@ def generate_candidate_sets(
 def main():
     args = parse_args()
 
+    (
+        args.output,
+        args.summary,
+    ) = resolve_output_paths(
+        args.split,
+        args.output,
+        args.summary,
+    )
+
+    split_value = (
+        0
+        if args.split == "train"
+        else 1
+    )
+
+    split_label = (
+        "training"
+        if args.split == "train"
+        else "validation"
+    )
+
     validate_required_files()
 
     if not torch.cuda.is_available():
@@ -1055,6 +1207,22 @@ def main():
         f"{torch.cuda.get_device_name(0)}"
     )
 
+    print(
+        f"Stage 8 split: "
+        f"{args.split} "
+        f"(split_value={split_value})"
+    )
+
+    print(
+        f"Output dataset: "
+        f"{args.output}"
+    )
+
+    print(
+        f"Output summary: "
+        f"{args.summary}"
+    )
+
     if args.max_groups is not None:
         print(
             f"Smoke limit: "
@@ -1066,18 +1234,18 @@ def main():
     )
 
     # ========================================================
-    # Stage 8 validation dataset
+    # Stage 8 selected split
     # ========================================================
 
     print(
-        "\nLoading Stage 8 validation dataset..."
+        f"\\nLoading Stage 8 {split_label} dataset..."
     )
 
     dataset = (
         SpectrumMoleculeDataset(
             stage6_dir=STAGE6_DIR,
             stage8_dir=STAGE8_DIR,
-            split_value=1,
+            split_value=split_value,
         )
     )
 
@@ -1093,7 +1261,7 @@ def main():
     )
 
     print(
-        f"Validation spectra: "
+        f"{split_label.capitalize()} spectra: "
         f"{len(dataset):,}"
     )
 
@@ -1244,8 +1412,9 @@ def main():
     # ========================================================
 
     metadata = (
-        load_validation_metadata(
-            dataset
+        load_split_metadata(
+            dataset,
+            split_name=split_label,
         )
     )
 
@@ -1278,7 +1447,7 @@ def main():
 
     else:
         print(
-            "Using all validation instruments."
+            f"Using all {split_label} instruments."
         )
 
     if metadata.empty:
@@ -1478,7 +1647,7 @@ def main():
     # ========================================================
 
     print(
-        "\nEncoding validation spectra..."
+        f"\\nEncoding {split_label} spectra..."
     )
 
     spectrum_parts = []
@@ -1621,7 +1790,7 @@ def main():
     eligible_metadata = (
         metadata[
             metadata[
-                "validation_index"
+                "split_index"
             ].isin(
                 eligible_indices
             )
@@ -1723,7 +1892,7 @@ def main():
         # PyTorch tensors.
         spectrum_indices = np.array(
             group_df[
-                "validation_index"
+                "split_index"
             ].astype(np.int64),
             dtype=np.int64,
             copy=True,
@@ -2038,7 +2207,7 @@ def main():
                 target
             )
 
-            candidate_exact_mass = (
+            candidate_exact_masses = (
                 exact_mass_lookup.get(
                     candidate_inchikey
                 )
@@ -2049,8 +2218,8 @@ def main():
                     candidate_position=(
                         candidate_position
                     ),
-                    candidate_exact_mass=(
-                        candidate_exact_mass
+                    candidate_exact_masses=(
+                        candidate_exact_masses
                     ),
                     group_df=group_df,
                     availability_numpy=(
@@ -2430,6 +2599,11 @@ def main():
         ),
         "=" * 72,
         "",
+        (
+            f"Stage 8 split: "
+            f"{args.split} "
+            f"(split_value={split_value})"
+        ),
         (
             f"Output: "
             f"{args.output}"

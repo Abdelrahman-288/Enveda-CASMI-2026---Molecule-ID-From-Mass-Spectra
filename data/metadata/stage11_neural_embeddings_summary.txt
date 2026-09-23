@@ -1,0 +1,36 @@
+ENVEDA CASMI 2026 - STAGE 11.3 TEST NEURAL EMBEDDINGS
+
+Device: cuda
+Candidate structures: 46,858
+Test spectra: 1,213
+Embedding dimension: 128
+
+MOLECULE EMBEDDINGS
+Shape: (46858, 128)
+Dtype: float32
+Minimum norm: 1.000000
+Median norm: 1.000000
+Mean norm: 1.000000
+Maximum norm: 1.000000
+Zero rows: 0
+Non-finite values: 0
+File size: 22.88 MB
+
+SPECTRUM EMBEDDINGS
+Shape: (1213, 128)
+Dtype: float32
+Minimum norm: 1.000000
+Median norm: 1.000000
+Mean norm: 1.000000
+Maximum norm: 1.000000
+Zero rows: 0
+Non-finite values: 0
+Minimum peaks: 4
+Median peaks: 128.00
+Mean peaks: 107.27
+Maximum peaks: 128
+File size: 0.59 MB
+
+Molecule embeddings: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\data\processed\stage11\test_candidate_embeddings.npy
+Spectrum embeddings: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\data\processed\stage11\test_spectrum_embeddings.npy
+Spectrum map: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\data\processed\stage11\test_spectrum_embedding_map.parquet

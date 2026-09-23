@@ -1,0 +1,35 @@
+ENVEDA CASMI 2026 - STAGE 10 RERANKER DATASET SUMMARY
+========================================================================
+
+Stage 8 split: train (split_value=0)
+Output: data\metadata\stage10_train_smoke.csv
+
+Groups considered: 10
+Groups saved: 10
+Groups missing true structure: 0
+Groups true candidate absent from pool: 0
+Groups with empty pool: 0
+
+Candidate rows: 960
+Queries: 10
+Positive rows: 10
+Unique candidate structures: 857
+
+Mean candidates/query: 96.00
+Median candidates/query: 103.5
+Min candidates/query: 3
+Max candidates/query: 172
+
+Invalid positive-count queries: 0
+
+Candidate modes:
+  intersection: 10
+
+Baseline Stage 9 mean-score metrics on retained queries:
+  Recall@1:  60.000%
+  Recall@5:  90.000%
+  Recall@10: 90.000%
+  Recall@25: 100.000%
+  MRR:       0.712879
+
+Elapsed: 771.26s (12.85 min)

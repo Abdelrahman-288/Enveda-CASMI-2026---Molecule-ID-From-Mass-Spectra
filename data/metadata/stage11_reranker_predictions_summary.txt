@@ -1,0 +1,43 @@
+ENVEDA CASMI 2026 - STAGE 11.4 TEST RERANKER INFERENCE
+
+Test molecules: 400
+Candidate rows: 56,992
+Unique candidate structures: 46,858
+Feature count: 11
+Feature matrix shape: (56992, 11)
+XGBoost best iteration: 731
+
+CANDIDATES PER MOLECULE
+Minimum: 2
+Median: 107.00
+Mean: 142.48
+Maximum: 604
+
+TOP-1 STAGE 10 SCORE
+Minimum: -2.026071
+Median: 3.629694
+Mean: 3.137651
+Maximum: 4.476227
+
+Rows that will enter top-25 submission: 9,604
+
+Supporting spectra minimum: 1
+Supporting spectra median: 3.00
+Supporting spectra mean: 3.18
+Supporting spectra maximum: 9
+
+MODEL FEATURES
+1. mean_score
+2. max_score
+3. top2_mean_score
+4. mass_error_ppm
+5. abs_mass_error_ppm
+6. num_supporting_spectra
+7. retrieval_rank
+8. similarity_rank
+9. neural_rank
+10. score_std
+11. score_range
+
+Feature output: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\data\processed\stage11\test_reranker_features.parquet
+Ranked predictions: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\data\processed\stage11\test_ranked_candidates.parquet

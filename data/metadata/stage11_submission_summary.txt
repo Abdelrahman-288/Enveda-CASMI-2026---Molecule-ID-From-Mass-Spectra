@@ -1,0 +1,20 @@
+ENVEDA CASMI 2026 - STAGE 11.5 FINAL SUBMISSION
+
+Submission rows: 400
+Unique molecule IDs: 400
+Top-K limit: 25
+
+PREDICTIONS PER MOLECULE
+Minimum: 2
+Median: 25.00
+Mean: 23.98
+Maximum: 25
+
+Top candidate rows validated by RDKit: 9,594
+Invalid RDKit SMILES: 0
+Duplicate evaluation identities removed: 10
+Stored identity matches after tautomer canonicalization: 9,491
+Stored identity mismatches after tautomer canonicalization: 103
+
+Submission path: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\outputs\stage11\submission.csv
+Debug top-25 path: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\outputs\stage11\submission_top25_debug.parquet

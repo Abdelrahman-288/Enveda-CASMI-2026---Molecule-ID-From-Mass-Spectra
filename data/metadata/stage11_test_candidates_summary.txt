@@ -1,0 +1,26 @@
+ENVEDA CASMI 2026 - STAGE 11.1 TEST CANDIDATE MANIFEST
+
+Test spectra: 1,213
+Test molecules: 400
+Combined indexed structures: 729,396
+Combined mass variants: 731,675
+
+MOLECULE CANDIDATE POOLS
+Minimum: 2.00
+Median: 107.00
+Mean: 142.48
+P90: 333.00
+P95: 406.20
+P99: 527.00
+Maximum: 604.00
+
+Intersection pools: 400
+Union fallbacks: 0
+
+Molecule-candidate rows: 56,992
+Spectrum-candidate rows: 182,127
+Unique candidate structures: 46,858
+
+Spectrum manifest: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\data\processed\stage11\test_spectrum_candidates.parquet
+Molecule manifest: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\data\processed\stage11\test_molecule_candidates.parquet
+Structure manifest: C:\Users\abdel\OneDrive\Desktop\Enveda CASMI 2026 - Molecule ID From Mass Spectra\data\processed\stage11\test_candidate_structures.parquet
